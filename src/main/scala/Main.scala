@@ -1,5 +1,3 @@
-import Main.{allNodes, board, width, world}
-
 import scala.collection.mutable
 import scala.io.Source
 
@@ -119,15 +117,4 @@ case class WorldNode(x: Int, y: Int, isWall: Boolean) extends Ordered[WorldNode]
       case parent1 => this :: parent1.reconstructPath()
     }
   }
-
-  //  def heuristic(): Int = {
-  //    distanceToGoal +
-  //  }
-  //  def heuristic()
-  //  def calculateEuclideanDistance(target: WorldNode): Unit = {
-  //    val dx1 = this.x - target.x
-  //    val dy1 = this.y - target.y
-  //
-  //  }
-
 }
