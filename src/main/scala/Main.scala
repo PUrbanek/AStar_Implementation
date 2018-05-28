@@ -78,7 +78,6 @@ class World(width: Int, height: Int, board: List[Char]) {
     lala.toString()
   }
 
-
   def getNeighbours(node: WorldNode): List[WorldNode] = {
     nodes.intersect(List(WorldNode(node.x-1,node.y, false),
       WorldNode(node.x,node.y-1, false),
