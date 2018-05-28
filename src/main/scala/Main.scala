@@ -4,7 +4,7 @@ import scala.io.Source
 
 object Main extends App {
 
-  val filename = "C:\\Users\\Sheenah\\IdeaProjects\\AStar_Implementation\\TrainingSets\\10.txt"
+  val filename = "TrainingSets\\8.txt"
   val lines = Source.fromFile(filename).getLines.toList
   val height = lines(0).trim().toInt
   val width = lines(1).trim().toInt
