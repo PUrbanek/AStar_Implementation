@@ -4,23 +4,20 @@ import scala.io.Source
 
 object Main extends App {
 
-  val filename = "TrainingSets\\8.txt"
+  val filename = "TrainingSets\\3.txt"
   val lines = Source.fromFile(filename).getLines.toList
   val height = lines(0).trim().toInt
   val width = lines(1).trim().toInt
   val board = lines.drop(2).flatten.filterNot((x: Char) => x.isWhitespace)
 
-  println(board)
   val allNodes = for {node <- board.zipWithIndex } yield
     if (node._1 == 'x') WorldNode(node._2%width, node._2/width.floor.toInt, true)
     else WorldNode(node._2%width, node._2/width.floor.toInt, false)
-  println(allNodes)
 
   val world = new World(width, height, board)
 
   world.start.distanceToGoal = Math.abs(world.goal.x - world.start.x) + Math.abs(world.goal.y - world.start.y)
   world.start.update(0, world.start, world.goal, null)
-  println("START: " + world.start + world.start.distanceToGoal.toString + " " + world.start.distanceFromStart.toString + " " + world.start.totalCost.toString)
 
   val path = doEverything(new mutable.PriorityQueue[WorldNode]() += world.start, Nil, 0)
 
