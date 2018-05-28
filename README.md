@@ -1,6 +1,14 @@
 # AStar_Implementation
 ## How to build and run your code.
-Run the program with sbt run
+Run the program with sbt run. Change desired test file in line 7 of the program. After running, it will print output similar to this:
+```
+SUCCESS
+Required expansions: 7
+s o _ _ _ 
+_ o o _ _ 
+_ _ o o _ 
+_ _ _ o g 
+```
 ## The heuristic that you used.
 I used Manhattan Distance as a heuristic. The cost of moving is always 1, and movements allowed are only horizontal and vertical.
 ## What you used for tie-breakers when you had two nodes in your priority queue with the same priority.
